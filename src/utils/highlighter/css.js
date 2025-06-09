@@ -19,7 +19,7 @@ export const css = {
     ],
     'string italic': ['flex', 'red'],
     global: ['margin', 'display', 'background'],
-    //
+    // css variable regex pattern
     'number italic': [/^--[a-zA-Z0-9_-]+/]
   }
 }
