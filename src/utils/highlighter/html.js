@@ -1,9 +1,9 @@
 export const html = {
   keywords: ['div', 'span', 'html', 'head', 'body', 'DOCTYPE', 'meta', 'title', 'script', 'style'],
-  punctuations: ['{', '}', '(', ')', '<', '>', '=', '/', '<!'],
   comments: [{ prefix: '<!--', suffix: '-->' }],
 
-  custom: {
+  tokens: {
+    punctuation: ['{', '}', '(', ')', '<', '>', '=', '/', '<!'],
     'global italic': [
       'class',
       'id',

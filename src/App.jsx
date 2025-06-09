@@ -4,8 +4,10 @@ export default function App() {
   return (
     <main className="mx-auto max-w-7xl min-h-dvh p-8">
       <header className="text-balance">
-        <h1 className="text-5xl tracking-tighter font-medium">Not-so Syntax Highlighter</h1>
-        <p className="mt-8 text-current/70">The most lightweight and </p>
+        <h1 className="text-5xl tracking-tighter font-medium font-mono">Nyintex</h1>
+        <p className="mt-8 text-current/70 font-medium">
+          The most lightweight, small, and customizable syntax highlighter! (maybe?)
+        </p>
       </header>
 
       <Code
@@ -101,6 +103,23 @@ console.log(css.render('bg-red m-10px'))`}
 }`}
         />
       </div>
+
+      <footer className="mt-12 text-center text-sm text-current/70 font-medium">
+        Built with{' '}
+        <a
+          href="https://github.com/nguraijs/nguraijs"
+          className="underline text-gray-950 hover:text-gray-700 hover:no-underline"
+        >
+          NguraiJS
+        </a>{' '}
+        and{' '}
+        <a
+          href="https://github.com/tenoxui/tenoxui"
+          className="underline text-gray-950 hover:text-gray-700 hover:no-underline"
+        >
+          TenoxUI
+        </a>
+      </footer>
     </main>
   )
 }

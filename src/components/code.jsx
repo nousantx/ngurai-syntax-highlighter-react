@@ -1,4 +1,4 @@
-import Ngurai from 'nguraijs'
+import Ngurai from '@nguraijs/core'
 import { merge } from '@nousantx/someutils'
 import { javascript, html, css } from '../utils/highlighter/preset'
 

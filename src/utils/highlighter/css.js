@@ -3,12 +3,12 @@ const crs = '0123456789_-'
 
 export const css = {
   keywords: ['body', 'html', 'main', 'calc', 'var'],
-  punctuations: ['{', '}', '(', ')', '.', ':', ';', '&', '='],
   identifierPattern: {
     starts: `${alf}${crs}`,
     parts: `${alf}${crs}`
   },
-  custom: {
+  tokens: {
+    punctuation: ['{', '}', '(', ')', '.', ':', ';', '&', '='],
     keyword: [
       'hover',
       'hover\\:',
