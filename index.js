@@ -1,11 +1,19 @@
 import Ngurai from 'nguraijs'
+import Core from '@nguraijs/core'
 
 const urx = new Ngurai({
   keywords: ['const', 'import', 'from', 'return', 'new'],
   punctuations: ['{', '}', '=', '(', ')', ':', ',', '.', ';'],
   custom: {
-    global: ['TenoxUI'],
-    selector: [/^--[a-zA-Z0-9_-]+/]
+    global: ['TenoxUI']
+  }
+})
+
+const crx = new Core({
+  keywords: ['const', 'import', 'from', 'return', 'new'],
+  tokens: {
+    punctuation: ['{', '}', '=', '(', ')', ':', ',', '.', ';'],
+    global: ['TenoxUI']
   }
 })
 
@@ -18,15 +26,14 @@ const css = new TenoxUI({
   }
 }
 
-css.render('bg-red m-10px')
+css.render('bg-red m-10px')`
 
-hover\\:bg-red:hover
---my-color
---my-color 
---my-color var(--my-color, red) --my-color`
-
-console.log(urx.process(code))
-
-console.time('v')
-urx.process(code.repeat(10000))
-console.timeEnd('v')
+for (let i = 0; i < 10; i++) {
+  console.log('Test ', i + 1)
+  console.time('Main')
+  urx.process(code.repeat(10000))
+  console.timeEnd('Main')
+  console.time('Core')
+  crx.process(code.repeat(10000))
+  console.timeEnd('Core')
+}
