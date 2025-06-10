@@ -2,7 +2,13 @@ import Ngurai from '@nguraijs/core'
 import { merge } from '@nousantx/someutils'
 import { javascript, html, css } from '../utils/highlighter/preset'
 
-export function Code({ code = '', lang = 'auto', reserve = {}, lineHighlight = null }) {
+export function Code({
+  code = '',
+  lang = 'auto',
+  reserve = {},
+  showLineNumbers = false,
+  lineHighlight = null
+}) {
   let preset
 
   switch (lang) {
@@ -48,7 +54,9 @@ export function Code({ code = '', lang = 'auto', reserve = {}, lineHighlight = n
                 (isLineActive(index + 1) ? 'bg-sky-500/10' : '')
               }
             >
-              <span className="mr-4 text-right select-none w-2ch">{index + 1}</span>
+              {showLineNumbers && (
+                <span className="mr-4 text-right select-none w-2ch">{index + 1}</span>
+              )}
               <span className="inline-flex w-full">
                 <span className="w-min block">
                   {item.map((token, index) => {
